@@ -2,6 +2,8 @@ import * as React from 'react';
 
 export const Navbar = () => {
     return (
-        <h1>Daily Helper</h1>
+        <div>
+            <h1>Daily Helper</h1>
+        </div>
     )
 }

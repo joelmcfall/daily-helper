@@ -1,3 +1,21 @@
 body {
-  background-color: aquamarine;
+    background-color: aquamarine;
+}
+
+/**-----------TODO-------------*/
+.todo {
+    display: flex;
+}
+
+.todo h3 {
+    padding: 5px;
+}
+
+.todo button {
+    height: 10%;
+}
+
+.todo .crossed-line {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
 }
