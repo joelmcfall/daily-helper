@@ -26,6 +26,7 @@ export const TodoList = () => {
     }
 
     function addTodo(event: any) {
+        event.preventDefault();
         const newTodo = {
             id: uuid(),
             title: state.value
@@ -49,7 +50,6 @@ export const TodoList = () => {
     }
 
     function checkTodo(event: any) {
-        console.log('yes')
         event.target.classList.toggle('crossed-line')
     }
 
@@ -66,10 +66,10 @@ export const TodoList = () => {
 
     return (
         <>
-            <div>
+            <form onSubmit={addTodo}>
                 <input type='text' value={state.value} onChange={handleChange} placeholder='todo...' />
-                <input type='button' onClick={addTodo}/>
-            </div>
+                <button type='submit'>+</button>
+            </form>
             {renderTodos()}
         </>
     )
