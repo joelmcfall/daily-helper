@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from './components/navbar'
+import { Quotes } from './components/quotes/Quotes';
 import { TodoList } from './components/todo/TodoList';
 
 export const App = () => {
@@ -7,6 +8,7 @@ export const App = () => {
         <>
             <Navbar />
             <TodoList />
+            <Quotes />
         </>
     )
 }

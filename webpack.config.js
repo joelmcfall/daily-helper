@@ -18,7 +18,10 @@ module.exports = {
 
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+          }
     },
 
     optimization: {

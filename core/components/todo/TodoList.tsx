@@ -27,6 +27,11 @@ export const TodoList = () => {
 
     function addTodo(event: any) {
         event.preventDefault();
+
+        if (!state.value) {
+            return;
+        }
+
         const newTodo = {
             id: uuid(),
             title: state.value
@@ -56,12 +61,13 @@ export const TodoList = () => {
     function renderTodos() {
         const { todos } = state;
 
-        return todos.map((todo, index) => <
-            Todo 
+        return todos.map((todo, index) => 
+        <Todo 
             key={index} 
             handleRemove={removeTodo}
             handleCheck={checkTodo}
-            todo={todo} />)
+            todo={todo} 
+        />)
     }
 
     return (

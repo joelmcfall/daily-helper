@@ -1,5 +1,6 @@
 const express = require('express');
 const webpack = require('webpack');
+const cors = require('cors');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const app = express();
@@ -8,11 +9,11 @@ const compiler = webpack(config);
 
 
 //Tells the server to use the webpack.config.js file 
-app.use(
+app.use([
     webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath
-    })
-);
+    }),
+]);
 
 //Serve the files here
 app.listen(3000, function () {
